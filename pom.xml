@@ -21,6 +21,20 @@
                     <target>8</target>
                 </configuration>
             </plugin>
+
+            <!-- surefire plugin used to run tests - here we can use it to run outside of our IDE
+            this can work with JUnit and Cucumber / we can also run multiple .xml in parallel-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>smoketest.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
     <dependencies>
